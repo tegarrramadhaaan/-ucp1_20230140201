@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Product List</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
     <h1>Product List</h1>
 
     <x-add-product :url="route('product.create')" :name="'Product'" />
@@ -26,11 +23,10 @@
                 <td>{{ $product->price }}</td>
                 <td>{{ $product->stock }}</td>
                 <td>
-                    <x-edit-button :url="route('product.edit', $product->id)" />
-                    <x-delete-button :url="route('product.destroy', $product->id)" />
+                    <x-edit-button :url="route('product.edit', $product->id)" :name="'Product'" />
+                    <x-delete-button :url="route('product.destroy', $product->id)" :name="'Product'" />
                 </td>
             </tr>
         @endforeach
     </table>
-</body>
-</html>
+@endsection

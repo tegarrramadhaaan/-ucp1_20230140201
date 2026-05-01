@@ -8,12 +8,16 @@ use Illuminate\View\Component;
 
 class EditButton extends Component
 {
+    public string $url;
+    public ?string $name;
+
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(string $url, ?string $name = null)
     {
-        //
+        $this->url = $url;
+        $this->name = $name;
     }
 
     /**

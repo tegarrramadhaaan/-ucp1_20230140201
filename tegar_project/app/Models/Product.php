@@ -10,5 +10,11 @@ class Product extends Model
         'name',
         'price',
         'stock',
+        'category_id',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
